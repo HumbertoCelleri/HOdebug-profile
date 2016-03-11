@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #ifdef TRAPFPE
-#include "fpe_x87_sse.h"
+#include "fpe_x87_sse/fpe_x87_sse.h"
 #endif
 
 int main(int argc, char *argv[])
@@ -16,8 +16,8 @@ int main(int argc, char *argv[])
   scanf("%f",&a);
   scanf("%f",&b);
 
-  tmp = sqrtf(a / b);
-  
+  tmp = sqrt(a / b);
+
   if(tmp > 2.)
     {
       c = +1.;
@@ -28,6 +28,6 @@ int main(int argc, char *argv[])
     }
 
   printf("c = %f \n", tmp);
-  
+
   return(EXIT_SUCCESS);
 }

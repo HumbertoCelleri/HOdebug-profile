@@ -5,7 +5,7 @@
 #include <fenv.h>
 #endif
 
-#include "fpe_x87_sse.h"
+#include "fpe_x87_sse/fpe_x87_sse.h"
 
 /* on x86 set_fpe_x87_sse_ enables trapping of OVERFLOW, DIVBYZERO, INVALID
    in x87 FPU and SSE */
@@ -13,7 +13,7 @@
 int set_fpe_x87_sse_(void)
 {
   int retcode;
-  
+
   retcode = feenableexcept(FE_OVERFLOW|FE_DIVBYZERO|FE_INVALID);
 
   return(retcode);
